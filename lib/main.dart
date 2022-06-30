@@ -4,6 +4,8 @@ import 'package:e_commerce/shared/bloc_observer.dart';
 import 'package:e_commerce/style/theme.dart';
 import 'package:flutter/material.dart';
 
+// gg
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
