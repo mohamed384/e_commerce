@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
             var cubit = HomeCubit.get(context);
             return Scaffold(
               appBar: AppBar(
-                title: Text('ECommerce'),
+                title: const Text('ECommerce'),
                 actions: [
                   IconButton(
                     onPressed: () {},

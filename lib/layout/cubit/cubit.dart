@@ -1,4 +1,5 @@
 import 'package:e_commerce/layout/cubit/states.dart';
+import 'package:e_commerce/screens/home/home_screen.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,10 +10,10 @@ class HomeCubit extends Cubit<HomeStates> {
   int currentIndex = 0;
 
   List<Widget> screens = [
-    Text('Home1'),
-    Text('Home2'),
-    Text('Home3'),
-    Text('Home4'),
+    const HomeScreen(),
+    const Text('Home2'),
+    const Text('Home3'),
+    const Text('Home4'),
   ];
   void changeBottomNav(int index) {
     currentIndex = index;

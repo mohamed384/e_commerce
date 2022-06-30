@@ -1,8 +1,7 @@
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:e_commerce/screens/cart/cubit/cubit.dart';
-import 'package:e_commerce/screens/cart/cubit/states.dart';
+import 'package:e_commerce/screens/home/cubit/cubit.dart';
+import 'package:e_commerce/screens/home/cubit/states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,14 +13,17 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   var cubit = CartCubit.get(context);
-    return BlocConsumer<CartCubit, CartStates>(
-        listener: (context, state) {},
-        builder: (context, state) {
-          return   builderBuilder(
-            context: context,
-          );
-        });
+    return BlocProvider(
+      create: (context) => HomeScreenCubit(),
+      child: BlocConsumer<HomeScreenCubit, HomeScreenStates>(
+          listener: (context, state) {},
+          builder: (context, state) {
+            var cubit = HomeScreenCubit.get(context);
+            return   builderBuilder(
+              context: context,
+            );
+          }),
+    );
   }
 
   Widget builderBuilder({
