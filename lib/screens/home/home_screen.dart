@@ -1,6 +1,8 @@
 import 'package:e_commerce/screens/home/cubit/cubit.dart';
 import 'package:e_commerce/screens/home/cubit/states.dart';
+import 'package:e_commerce/screens/home/poduct_card.dart';
 import 'package:e_commerce/shared/component/carousel_slider.dart';
+import 'package:e_commerce/shared/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,8 +29,54 @@ class HomeScreen extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  CarouselSliderComponent(images: images),
+                children:  [
+                  const CarouselSliderComponent(images: images),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Column(
+                      children: [
+                        Row(
+                          children:  const [
+                            Text(
+                              'hot offers',
+                              style: TextStyle(
+                                fontSize: titleSize,
+                                color: mainColor,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            Spacer(),
+                            Text(
+                              'see all',
+                              style: TextStyle(
+
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.black54,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 200.0,
+
+                          child: ListView.separated(
+
+                              physics: const BouncingScrollPhysics(),
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context, index) => ProductCard(image: images[index], title: 'iphone', price: 20000, oldPrice: 18000, press: (){}),
+                              separatorBuilder: (context, index) => const SizedBox(
+                                width: 10.0,
+                              ),
+                              itemCount: images.length),
+                        ),
+
+                      ],
+                    ),
+                  ),
 
                 ],
               ),

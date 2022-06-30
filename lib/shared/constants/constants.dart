@@ -19,3 +19,8 @@ const Color textColor2 = Color(0XFF9BB3C0);
  Color?  authColor2 = Colors.yellow[300];
 const Color backgroundColor = Color(0xFFECF3F9);
 const Color textColor = Colors.black;
+
+const Color bgColor = Color(0xFFFBFBFD);
+
+const double defaultPadding = 16.0;
+const double defaultBorderRadius = 12.0;
